@@ -73,13 +73,25 @@ const MultiStepForm = () => {
       h="100vh"
       overflow="hidden"
     >
-      <Image mt="2rem" src={HeroPic} alt="hero" w="40rem" h="auto" />
+      <Image
+        mt="2rem"
+        src={HeroPic}
+        alt="hero"
+        w={{ xl: '40rem', base: '20rem' }}
+        h="auto"
+      />
 
-      <Text fontSize="2rem" fontWeight="700" fontFamily="Work sans">
+      <Text
+        mt={{ base: '2rem' }}
+        fontSize={{ xl: '2rem', base: '1.5rem' }}
+        fontWeight="700"
+        fontFamily="Work sans"
+        textAlign="center"
+      >
         Welcome to the "Farmer Wants a Wife" Casting Application
       </Text>
-      <Box mx="20rem">
-        <Text fontSize="1rem">
+      <Box mx="20rem" w="100%">
+        <Text mx={{ base: '2rem' }} fontSize={{ xl: '1rem', base: '1.2rem' }}>
           Good news! The producers and casting crew of FOX's hit show "Farmer
           Wants A Wife" have vetted your profile and decided to reopen the
           application process for 24 hours. If you meet the eligibility criteria
