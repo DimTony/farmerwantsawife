@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(180deg, #cee5fd, #fff);
+  background-size: cover;
+  font-family: 'Work Sans', sans-serif;
+  font-optical-sizing: auto;
+  font-variation-settings: 'wdth' 100;
+  line-height: 1.5;
+  overflow-y: auto;
+} */
+
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #cee5fd, #fff);
+  color: #333;
+  /* font-family: 'Work sans'; */
+}
+
+a {
+  text-decoration: none;
+}
+
+.transition-3 {
+  transition: all 0.33s ease;
+  -webkit-transition: all 0.33s ease;
+  -moz-transition: all 0.33s ease;
+}
+
+.transition-5 {
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+}
