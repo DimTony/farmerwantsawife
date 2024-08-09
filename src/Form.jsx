@@ -121,7 +121,7 @@ const MultiStepForm = () => {
       <VStack mt="1rem" justifyContent="space-between" mb="2rem">
         {currentStep === 1 && (
           <>
-            <Box mb={{ base: '2rem' }} mx={{ base: '2rem' }}>
+            <Box mb={{ xl: '2rem' }} mx={{ base: '2rem' }}>
               <Text color="red.500" textAlign="center" fontWeight="700">
                 This casting call requires you to be between 21 and 60 years of
                 age to apply.
