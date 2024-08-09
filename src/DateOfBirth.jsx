@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
-import { Box, Flex, Input, Text } from '@chakra-ui/react';
+import { Box, Flex, HStack, Input, Text } from '@chakra-ui/react';
 
 const DateOfBirthInput = ({ setIsValid, formData, setFormData }) => {
   const [age, setAge] = useState(null);
@@ -57,6 +57,7 @@ const DateOfBirthInput = ({ setIsValid, formData, setFormData }) => {
           type="number"
           min={1}
           max={12}
+          outline="1px solid #306ac0"
         />
         <Input
           name="dateOfBirth.day"
@@ -67,6 +68,7 @@ const DateOfBirthInput = ({ setIsValid, formData, setFormData }) => {
           type="number"
           min={1}
           max={31}
+          outline="1px solid #306ac0"
         />
         <Input
           name="dateOfBirth.year"
@@ -77,18 +79,21 @@ const DateOfBirthInput = ({ setIsValid, formData, setFormData }) => {
           type="number"
           min={1900}
           max={new Date().getFullYear()}
+          outline="1px solid #306ac0"
         />
       </Flex>
-      {errorMessage && (
-        <Text color="red.500" mt={2}>
-          {errorMessage}
-        </Text>
-      )}
-      {age !== null && !errorMessage && (
-        <Text color="green.500" mt={2}>
-          Age verified: {age} years old.
-        </Text>
-      )}
+      <HStack justifyContent="center">
+        {errorMessage && (
+          <Text color="red.500" mt={2}>
+            {errorMessage}
+          </Text>
+        )}
+        {age !== null && !errorMessage && (
+          <Text color="green.500" mt={2}>
+            Age verified: {age} years old.
+          </Text>
+        )}
+      </HStack>
     </Box>
   );
 };

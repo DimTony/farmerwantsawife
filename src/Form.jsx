@@ -89,7 +89,7 @@ const MultiStepForm = () => {
   return (
     <VStack alignItems="center" w="100vw" h="100vh" overflow="hidden" mb="2rem">
       <Image
-        mt="2rem"
+        mt="1rem"
         src={HeroPic}
         alt="hero"
         w={{ xl: '40rem', base: '20rem' }}
@@ -97,7 +97,7 @@ const MultiStepForm = () => {
       />
 
       <Text
-        mt={{ base: '2rem' }}
+        mt={{ base: '2rem', xl: '0' }}
         fontSize={{ xl: '2rem', base: '1.5rem' }}
         fontWeight="700"
         fontFamily="Work sans"
@@ -118,10 +118,10 @@ const MultiStepForm = () => {
         </Box>
       )}
 
-      <VStack mt="1rem" justifyContent="space-between" mb="2rem">
+      <VStack mt="1rem" justifyContent="space-between">
         {currentStep === 1 && (
           <>
-            <Box mb={{ xl: '2rem' }} mx={{ base: '2rem' }}>
+            <Box mx={{ base: '2rem' }}>
               <Text color="red.500" textAlign="center" fontWeight="700">
                 This casting call requires you to be between 21 and 60 years of
                 age to apply.
@@ -179,7 +179,15 @@ const MultiStepForm = () => {
             </Button>
           )}
           {currentStep < 3 ? (
-            <Button rightIcon={<FaArrowRight />} onClick={handleNext}>
+            <Button
+              w="7rem"
+              h="3rem"
+              fontSize="1.2rem"
+              color="#fff"
+              bg="#306ac0"
+              rightIcon={<FaArrowRight />}
+              onClick={handleNext}
+            >
               Next
             </Button>
           ) : (
