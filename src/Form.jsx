@@ -12,6 +12,7 @@ import {
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import HeroPic from './assets/FWAW-1.png';
 import DateOfBirthInput from './DateOfBirth';
+import BiosForm from './BiosForm';
 
 const MultiStepForm = () => {
   const [isDateValid, setIsDateValid] = useState(false);
@@ -87,7 +88,13 @@ const MultiStepForm = () => {
   };
 
   return (
-    <VStack alignItems="center" w="100vw" h="100vh" overflow="hidden" mb="2rem">
+    <VStack
+      alignItems="center"
+      w={{ xl: '100vw', base: '100%' }}
+      h={{ xl: '90vh', base: '100%' }}
+      overflow="hidden"
+      mb="2rem"
+    >
       <Image
         mt="1rem"
         src={HeroPic}
@@ -136,25 +143,7 @@ const MultiStepForm = () => {
         )}
 
         {currentStep === 2 && (
-          <Box>
-            <Text mb={4}>Step 2: Account Information</Text>
-            <Flex direction="column" gap={4}>
-              <input
-                name="password"
-                type="password"
-                placeholder="Password"
-                value={formData.password}
-                onChange={handleChange}
-              />
-              <input
-                name="confirmPassword"
-                type="password"
-                placeholder="Confirm Password"
-                value={formData.confirmPassword}
-                onChange={handleChange}
-              />
-            </Flex>
-          </Box>
+          <BiosForm formData={formData} handleChange={handleChange} />
         )}
 
         {currentStep === 3 && (
@@ -172,7 +161,7 @@ const MultiStepForm = () => {
           </Box>
         )}
 
-        <Flex justify="space-between" my={6}>
+        <Flex justify="space-between">
           {currentStep > 1 && (
             <Button leftIcon={<FaArrowLeft />} onClick={handlePrev}>
               Previous
