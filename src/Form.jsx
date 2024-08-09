@@ -172,7 +172,7 @@ const MultiStepForm = () => {
           </Box>
         )}
 
-        <Flex justify="space-between" mt={6}>
+        <Flex justify="space-between" my={6}>
           {currentStep > 1 && (
             <Button leftIcon={<FaArrowLeft />} onClick={handlePrev}>
               Previous
