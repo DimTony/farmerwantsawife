@@ -87,7 +87,7 @@ const MultiStepForm = () => {
   };
 
   return (
-    <VStack alignItems="center" w="100vw" h="100vh" overflow="hidden">
+    <VStack alignItems="center" w="100vw" h="100vh" overflow="hidden" mb="2rem">
       <Image
         mt="2rem"
         src={HeroPic}
