@@ -18,15 +18,33 @@ const MultiStepForm = () => {
   const [isDateValid, setIsDateValid] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
+    firstName: '',
+    lastName: '',
+    emailAddress: '',
+    // password: '',
+    // confirmPassword: '',
     dateOfBirth: {
       month: '',
       day: '',
       year: '',
     },
+    mobilePhone: '',
+    socialHandles: '',
+    currentCity: '',
+    currentState: '',
+    hometownCity: '',
+    hometownState: '',
+    occupation: '',
+    height: '',
+    relationshipStatus: '',
+    noOfChildren: '',
+    whyApply: '',
+    cityGirlOrCountryGirl: '',
+    howYouHeard: '',
+    appliedBefore: '',
+    introVideo: '',
+    fullBodyPhoto: '',
+    headShotPhoto: '',
   });
   const toast = useToast();
 
@@ -59,10 +77,29 @@ const MultiStepForm = () => {
 
     if (
       currentStep === 2 &&
-      (!formData.password || formData.password !== formData.confirmPassword)
+      (!formData.firstName ||
+        !formData.lastName ||
+        !formData.dateOfBirth ||
+        !formData.mobilePhone ||
+        !formData.socialHandles ||
+        !formData.currentCity ||
+        !formData.currentState ||
+        !formData.hometownCity ||
+        !formData.hometownState ||
+        !formData.occupation ||
+        !formData.height ||
+        !formData.relationshipStatus ||
+        !formData.noOfChildren ||
+        !formData.whyApply ||
+        !formData.cityGirlOrCountryGirl ||
+        !formData.howYouHeard ||
+        !formData.appliedBefore ||
+        !formData.introVideo ||
+        !formData.fullBodyPhoto ||
+        !formData.headShotPhoto)
     ) {
       toast({
-        title: 'Please enter a valid password',
+        title: 'Please fill the required fields',
         status: 'error',
         duration: 3000,
         isClosable: true,
@@ -71,6 +108,8 @@ const MultiStepForm = () => {
     }
 
     setCurrentStep(currentStep + 1);
+    console.log(formData);
+    console.log('44');
   };
 
   const handlePrev = () => {
@@ -79,7 +118,11 @@ const MultiStepForm = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    // setFormData({ ...formData, [name]: value });
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = () => {
@@ -91,7 +134,7 @@ const MultiStepForm = () => {
     <VStack
       alignItems="center"
       w={{ xl: '100vw', base: '100%' }}
-      h={{ xl: '90vh', base: '100%' }}
+      h={{ xl: '100%', base: '100%' }}
       overflow="hidden"
       mb="2rem"
     >
@@ -115,12 +158,21 @@ const MultiStepForm = () => {
       {currentStep === 1 && (
         <Box mx="20rem" w="100%">
           <Text mx={{ base: '2rem' }} fontSize={{ xl: '1rem', base: '1.2rem' }}>
-            Good news! The producers and casting crew of FOX's hit show "Farmer
-            Wants A Wife" have vetted your profile and decided to reopen the
-            application process for 24 hours. If you meet the eligibility
-            criteria below, head over to our application portal and get started.
-            Be sure to save your registration information, as you can log back
-            in and continue the application at any time.
+            Good news! The producers and casting crew of FOX's hit show{' '}
+            <Text as="span" fontWeight="bold" color="blue.500">
+              "Farmer Wants A Wife"
+            </Text>{' '}
+            have vetted your profile and decided to reopen the application
+            process for{' '}
+            <Text as="span" fontWeight="bold" color="red.500">
+              24 hours
+            </Text>{' '}
+            for a one-time fee of $1000.00 of which you are to pay half now and
+            the balance in person upon successful completion of your interview
+            at our studio. If you meet the eligibility criteria below, fill out
+            the form below honestly. Be sure to save your registration
+            information, as you can log back in and continue the application at
+            any time.
           </Text>
         </Box>
       )}
@@ -143,7 +195,11 @@ const MultiStepForm = () => {
         )}
 
         {currentStep === 2 && (
-          <BiosForm formData={formData} handleChange={handleChange} />
+          <BiosForm
+            formData={formData}
+            setFormData={setFormData}
+            handleChange={handleChange}
+          />
         )}
 
         {currentStep === 3 && (
@@ -161,14 +217,28 @@ const MultiStepForm = () => {
           </Box>
         )}
 
-        <Flex justify="space-between">
+        <Flex justify="space-between" gap="2rem" mb="2rem">
           {currentStep > 1 && (
-            <Button leftIcon={<FaArrowLeft />} onClick={handlePrev}>
+            <Button
+              px="5rem"
+              w="7rem"
+              h="3rem"
+              fontSize="1.2rem"
+              leftIcon={<FaArrowLeft />}
+              onClick={handlePrev}
+              outline="0.5px solid rgba(48, 106, 192, 0.4)"
+              _hover={{
+                bg: '#306ac0',
+                color: '#eaeff5',
+                outline: '0.5px solid rgba(48, 106, 192, 0.4)',
+              }}
+            >
               Previous
             </Button>
           )}
           {currentStep < 3 ? (
             <Button
+              px="5rem"
               w="7rem"
               h="3rem"
               fontSize="1.2rem"
@@ -176,6 +246,11 @@ const MultiStepForm = () => {
               bg="#306ac0"
               rightIcon={<FaArrowRight />}
               onClick={handleNext}
+              _hover={{
+                color: '#306ac0',
+                bg: '#eaeff5',
+                outline: '0.5px solid rgba(48, 106, 192, 0.4)',
+              }}
             >
               Next
             </Button>
