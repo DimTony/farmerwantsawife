@@ -11,7 +11,7 @@ import {
 const BiosForm = ({ formData, handleChange }) => {
   return (
     <>
-      <Box w={{ xl: '70vw', base: '90vw' }} h={{ base: '50vh' }}>
+      <Box w={{ xl: '70vw', base: '90vw' }} h={{ base: '60dvh' }}>
         {/* <Text mb={4}>Step 2: Account Information</Text> */}
 
         {/* <input
