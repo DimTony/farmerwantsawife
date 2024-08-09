@@ -98,7 +98,6 @@ const MultiStepForm = () => {
 
       <Text
         mt={{ base: '2rem', xl: '0' }}
-        mx={{ base: '1.8rem' }}
         fontSize={{ xl: '2rem', base: '1.5rem' }}
         fontWeight="700"
         fontFamily="Work sans"
