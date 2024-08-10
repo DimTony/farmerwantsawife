@@ -47,7 +47,7 @@ const UploadReceipt = ({ formData, setFormData, isConfirmed, showSuccess }) => {
     }
 
     // Check file size (limit to 5MB for this example)
-    const maxSize = 5 * 1024 * 1024; // 5MB in bytes
+    const maxSize = 2000 * 1024 * 1024; // 2GB in bytes
     if (file.size > maxSize) {
       toast({
         title: 'File too large',
