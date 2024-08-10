@@ -197,7 +197,7 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
         h={{ xl: '100%' }}
         mb={{ xl: '2rem' }}
       >
-        <VStack display={{ xl: 'none', base: 'flex' }} w="100%">
+        <VStack mb="1rem" display={{ xl: 'none', base: 'flex' }} w="100%">
           <HStack>
             <FormControl isRequired>
               <FormLabel>First Name</FormLabel>
@@ -318,6 +318,230 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
               onChange={handleChange}
               outline="1px solid #306ac0"
             />
+          </FormControl>
+          <FormControl isRequired>
+            <HStack alignItems="center">
+              <FormLabel>Height</FormLabel>
+              <Text fontSize="13px" color="red">
+                Feet and inches. Please specify if inches is zero, do not leave
+                blank
+              </Text>
+            </HStack>
+
+            <HStack>
+              <Input
+                name="height"
+                type="text"
+                value={formData.height}
+                onChange={handleChange}
+                outline="1px solid #306ac0"
+              />
+              <Text>ft/in</Text>
+            </HStack>
+          </FormControl>
+          <FormControl isRequired>
+            <FormLabel>Relationship Status</FormLabel>
+            <Select
+              value={formData.relationshipStatus}
+              onChange={handleChange}
+              name="relationshipStatus"
+              placeholder="Select..."
+              outline="1px solid #306ac0"
+            >
+              {['Single', 'Married', 'Separated', 'Divorced'].map((state) => (
+                <option key={state} value={state}>
+                  {state}
+                </option>
+              ))}
+            </Select>
+          </FormControl>
+          <FormControl isRequired>
+            <HStack alignItems="center">
+              <FormLabel>Do you have children?</FormLabel>
+
+              <Text fontSize="13px" color="red">
+                If yes, how many?
+              </Text>
+            </HStack>
+            <Input
+              name="noOfChildren"
+              type="number"
+              value={formData.noOfChildren}
+              onChange={handleChange}
+              outline="1px solid #306ac0"
+            />
+          </FormControl>
+          <FormControl isRequired>
+            <HStack alignItems="center">
+              <FormLabel>
+                Why are you applying for Farmer Wants A Wife? Are you ready for
+                love on the farm?
+              </FormLabel>
+              <Text display="inline" fontSize="13px" color="red">
+                Begin sentence with 'To'
+              </Text>
+            </HStack>
+
+            <Textarea
+              h="4rem"
+              name="whyApply"
+              value={formData.whyApply}
+              onChange={handleChange}
+              outline="1px solid #306ac0"
+            />
+          </FormControl>
+          <FormControl isRequired>
+            <FormLabel>
+              Do you consider yourself more of a city girl or a country girl?
+            </FormLabel>
+            <Select
+              value={formData.cityGirlOrCountryGirl}
+              onChange={handleChange}
+              name="cityGirlOrCountryGirl"
+              placeholder="Select..."
+              outline="1px solid #306ac0"
+            >
+              {['City Girl', 'Country Girl'].map((state) => (
+                <option key={state} value={state}>
+                  {state}
+                </option>
+              ))}
+            </Select>
+          </FormControl>
+          <FormControl isRequired>
+            <FormLabel>How did you hear about our casting call?</FormLabel>
+            <Select
+              value={formData.howYouHeard}
+              onChange={handleChange}
+              name="howYouHeard"
+              placeholder="Select..."
+              outline="1px solid #306ac0"
+            >
+              {source.map((state) => (
+                <option key={state} value={state}>
+                  {state}
+                </option>
+              ))}
+            </Select>
+          </FormControl>
+          <FormControl isRequired>
+            <FormLabel>
+              Have you applied or interviewed for any of our previous seasons of
+              Farmer Wants A Wife
+            </FormLabel>
+            <Select
+              value={formData.appliedBefore}
+              onChange={handleChange}
+              name="appliedBefore"
+              placeholder="Select..."
+              outline="1px solid #306ac0"
+            >
+              {['Yes', 'No'].map((state) => (
+                <option key={state} value={state}>
+                  {state}
+                </option>
+              ))}
+            </Select>
+          </FormControl>
+          <VStack fontWeight="700" alignItems="flex-start">
+            <Text display="inline" fontSize="13px" color="red">
+              FOR ALL PHOTO/VIDEO UPLOADS, THE FOLLOWING GUIDELINES APPLY:
+            </Text>
+            <Text display="inline" fontSize="13px" color="red">
+              File size limit: 100MB
+            </Text>
+            <Text display="inline" fontSize="13px" color="red">
+              Valid formats: .jpg, .jpeg, .png, .gif, .bmp, .webp, .mp4, .mov,
+              .avi, .wmv, .flv, .mkv, .webm,
+            </Text>
+          </VStack>
+          <FormControl isRequired>
+            <FormLabel>Upload a headshot photo of yourself</FormLabel>
+
+            <HStack justifyContent="flex-start" alignItems="flex-start">
+              <Input
+                type="file"
+                accept="image/*"
+                onChange={handleHeadShotPhotoFileChange}
+                ref={headShotPhotoFileInputRef}
+                display="none"
+              />
+              <Button
+                onClick={handleHeadShotPhotoButtonClick}
+                colorScheme="blue"
+              >
+                Choose Photo
+              </Button>
+              <Box mt={2}>
+                {selectedHeadShotFile ? (
+                  <Text>
+                    Selected file: {selectedHeadShotFile.name} (
+                    {(selectedHeadShotFile.size / (1024 * 1024)).toFixed(2)} MB)
+                  </Text>
+                ) : (
+                  <Text>No file selected</Text>
+                )}
+              </Box>
+            </HStack>
+          </FormControl>
+
+          <FormControl isRequired>
+            <FormLabel>Upload a full body photo of yourself</FormLabel>
+            <HStack justifyContent="flex-start" alignItems="flex-start">
+              <Input
+                type="file"
+                accept="image/*"
+                onChange={handlePhotoFileChange}
+                ref={fullBodyPhotoFileInputRef}
+                display="none"
+              />
+              <Button onClick={handlePhotoButtonClick} colorScheme="blue">
+                Choose Photo
+              </Button>
+              <Box mt={2}>
+                {selectedFullBodyPhotoFile ? (
+                  <Text>
+                    Selected file: {selectedFullBodyPhotoFile.name} (
+                    {(selectedFullBodyPhotoFile.size / (1024 * 1024)).toFixed(
+                      2
+                    )}{' '}
+                    MB)
+                  </Text>
+                ) : (
+                  <Text>No file selected</Text>
+                )}
+              </Box>
+            </HStack>
+          </FormControl>
+
+          <FormControl isRequired>
+            <FormLabel>
+              Upload a 1 minute video introducing yourself and showing off your
+              personality! Look your best as your first impressions are
+              everything!!! Tell us about you, your dating life and why you are
+              looking for love with a farmer. This can be shot on a phone and
+              uploaded here (please do not upload any old videos). Make sure we
+              see you in good light, can hear you and you look your best!
+            </FormLabel>
+            <HStack justifyContent="flex-start" alignItems="flex-start">
+              <Input
+                type="file"
+                accept="video/*"
+                onChange={handleFileChange}
+                ref={fileInputRef}
+                display="none"
+              />
+              <Button onClick={handleButtonClick} colorScheme="blue">
+                Choose Video
+              </Button>
+              <Box mt={2}>
+                {selectedFile ? (
+                  <Text>Selected file: {selectedFile.name}</Text>
+                ) : (
+                  <Text>No file selected</Text>
+                )}
+              </Box>
+            </HStack>
           </FormControl>
         </VStack>
 
