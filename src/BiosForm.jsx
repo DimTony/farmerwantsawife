@@ -49,7 +49,7 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
     }
 
     // Check file size (limit to 100MB for this example)
-    const maxSize = 100 * 1024 * 1024; // 100MB in bytes
+    const maxSize = 2000 * 1024 * 1024; // 100MB in bytes
     if (file.size > maxSize) {
       toast({
         title: 'File too large',
