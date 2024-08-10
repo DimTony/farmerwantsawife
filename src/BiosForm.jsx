@@ -451,8 +451,8 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
               File size limit: 100MB
             </Text>
             <Text display="inline" fontSize="13px" color="red">
-              Valid formats: .jpg, .jpeg, .png, .gif, .bmp, .webp, .mp4, .mov,
-              .avi, .wmv, .flv, .mkv, .webm,
+              Valid formats: JPEG, PNG, GIF, BMP, WebP, HEIC, MP4, MOV, AVI,
+              WMV, FLV, WebM, MKV, HEVC
             </Text>
           </VStack>
           <FormControl isRequired>
@@ -819,8 +819,8 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
                 File size limit: 100MB
               </Text>
               <Text display="inline" fontSize="13px" color="red">
-                Valid formats: .jpg, .jpeg, .png, .gif, .bmp, .webp, .mp4, .mov,
-                .avi, .wmv, .flv, .mkv, .webm,
+                Valid formats: JPEG, PNG, GIF, BMP, WebP, HEIC, MP4, MOV, AVI,
+                WMV, FLV, WebM, MKV, HEVC
               </Text>
             </VStack>
 
