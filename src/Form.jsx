@@ -335,7 +335,13 @@ const MultiStepForm = () => {
               application at any time.
             </Text>
             <HStack justifyContent="center">
-              <Text as="span" fontWeight="bold" color="red.500">
+              <Text
+                mt={{ base: '1rem' }}
+                mx={{ base: '2rem' }}
+                as="span"
+                fontWeight="bold"
+                color="red.500"
+              >
                 This form is only valid for one entry. Ensure you don't share
                 the link with anyone as we will only accept the first entry via
                 this form.
