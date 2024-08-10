@@ -197,28 +197,130 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
         h={{ xl: '100%' }}
         mb={{ xl: '2rem' }}
       >
-        <HStack display={{ xl: 'none', base: 'flex' }} w="100%">
+        <VStack display={{ xl: 'none', base: 'flex' }} w="100%">
+          <HStack>
+            <FormControl isRequired>
+              <FormLabel>First Name</FormLabel>
+              <Input
+                name="firstName"
+                type="text"
+                value={formData.firstName}
+                onChange={handleChange}
+                outline="1px solid #306ac0"
+              />
+            </FormControl>
+            <FormControl isRequired>
+              <FormLabel>Last Name</FormLabel>
+              <Input
+                name="lastName"
+                type="text"
+                value={formData.lastName}
+                onChange={handleChange}
+                outline="1px solid #306ac0"
+              />
+            </FormControl>
+          </HStack>
           <FormControl isRequired>
-            <FormLabel>First Name</FormLabel>
+            <FormLabel>Mobile Phone:</FormLabel>
             <Input
-              name="firstName"
-              type="text"
-              value={formData.firstName}
+              name="mobilePhone"
+              type="tel"
+              value={formData.mobilePhone}
               onChange={handleChange}
               outline="1px solid #306ac0"
             />
           </FormControl>
           <FormControl isRequired>
-            <FormLabel>Last Name</FormLabel>
+            <FormLabel>Email:</FormLabel>
             <Input
-              name="lastName"
-              type="text"
-              value={formData.lastName}
+              name="emailAddress"
+              type="email"
+              value={formData.emailAddress}
               onChange={handleChange}
               outline="1px solid #306ac0"
             />
           </FormControl>
-        </HStack>
+          <FormControl isRequired>
+            <FormLabel>
+              List your social media handles seperated by commas (e.g.
+              IG@farmeraustralia, Facebook@Farmer Wants A Wife )
+            </FormLabel>
+            <Textarea
+              h="4rem"
+              name="socialHandles"
+              value={formData.socialHandles}
+              onChange={handleChange}
+              outline="1px solid #306ac0"
+            />
+          </FormControl>
+          <HStack>
+            <FormControl isRequired>
+              <FormLabel>Current City</FormLabel>
+              <Input
+                name="currentCity"
+                type="text"
+                value={formData.currentCity}
+                onChange={handleChange}
+                outline="1px solid #306ac0"
+              />
+            </FormControl>
+            <FormControl isRequired>
+              <FormLabel>Current State</FormLabel>
+              <Select
+                value={formData.currentState}
+                placeholder="Select..."
+                outline="1px solid #306ac0"
+                onChange={handleChange}
+                name="currentState"
+              >
+                {australianStates.map((state) => (
+                  <option key={state} value={state}>
+                    {state}
+                  </option>
+                ))}
+              </Select>
+            </FormControl>
+          </HStack>
+          <HStack>
+            <FormControl isRequired>
+              <FormLabel>Hometown City</FormLabel>
+              <Input
+                name="hometownCity"
+                type="text"
+                value={formData.hometownCity}
+                onChange={handleChange}
+                outline="1px solid #306ac0"
+              />
+            </FormControl>
+            <FormControl isRequired>
+              <FormLabel>Hometown State</FormLabel>
+              <Select
+                value={formData.hometownState}
+                placeholder="Select..."
+                outline="1px solid #306ac0"
+                onChange={handleChange}
+                name="hometownState"
+              >
+                {australianStates.map((state) => (
+                  <option key={state} value={state}>
+                    {state}
+                  </option>
+                ))}
+              </Select>
+            </FormControl>
+          </HStack>
+          <FormControl isRequired>
+            <FormLabel>Occupation</FormLabel>
+            <Input
+              name="occupation"
+              type="text"
+              value={formData.occupation}
+              onChange={handleChange}
+              outline="1px solid #306ac0"
+            />
+          </FormControl>
+        </VStack>
+
         <HStack
           display={{ xl: 'flex', base: 'none' }}
           justifyContent="space-between"
