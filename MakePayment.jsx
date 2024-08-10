@@ -22,6 +22,7 @@ import { zoomInOut } from './CustomCSS';
 import PayPalLogo from './src/assets/PayPal.png';
 import { IoMdPerson } from 'react-icons/io';
 import { BsPersonBoundingBox } from 'react-icons/bs';
+import MobileQuestionTooltip from './MobileTooltip';
 
 const MakePayment = ({
   formData,
@@ -49,7 +50,7 @@ const MakePayment = ({
       <VStack mb="2rem" justifyContent="center">
         <Text
           animation={`${zoomInOut} 3s ease-in-out infinite`}
-          fontSize="2rem"
+          fontSize={{ xl: '2rem', base: '1rem' }}
           color="#306ac0"
           fontWeight="700"
           mb="3rem"
@@ -116,7 +117,7 @@ const MakePayment = ({
             spacing={0}
             w="100%"
           >
-            <HStack>
+            <HStack alignItems="center">
               <Text fontSize="0.8rem" fontWeight="700">
                 To
               </Text>
@@ -137,8 +138,15 @@ const MakePayment = ({
                 aria-label="PayPal Transfer Instructions"
                 placement="right"
               >
-                <QuestionIcon ml={1} color="blue.500" />
+                <QuestionIcon
+                  ml={1}
+                  color="blue.500"
+                  display={{ xl: 'flex', base: 'none' }}
+                />
               </Tooltip>
+              <Box display={{ xl: 'none', base: 'flex' }}>
+                <MobileQuestionTooltip />
+              </Box>
             </HStack>
 
             <HStack alignItems="flex-start" h="2.5rem">
