@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import {
@@ -382,13 +383,11 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
                 placeholder="Select..."
                 outline="1px solid #306ac0"
               >
-                {['Single', 'Open', 'Married', 'Separated', 'Divorced'].map(
-                  (state) => (
-                    <option key={state} value={state}>
-                      {state}
-                    </option>
-                  )
-                )}
+                {['Single', 'Married', 'Separated', 'Divorced'].map((state) => (
+                  <option key={state} value={state}>
+                    {state}
+                  </option>
+                ))}
               </Select>
             </FormControl>
           </VStack>
@@ -403,7 +402,7 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
               </HStack>
               <Input
                 name="noOfChildren"
-                type="text"
+                type="number"
                 value={formData.noOfChildren}
                 onChange={handleChange}
                 outline="1px solid #306ac0"
@@ -411,10 +410,16 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
             </FormControl>
 
             <FormControl isRequired>
-              <FormLabel>
-                Why are you applying for Farmer Wants A Wife? Are you ready for
-                love on the farm?
-              </FormLabel>
+              <HStack alignItems="center">
+                <FormLabel>
+                  Why are you applying for Farmer Wants A Wife? Are you ready
+                  for love on the farm?
+                </FormLabel>
+                <Text display="inline" fontSize="13px" color="red">
+                  Begin sentence with 'To'
+                </Text>
+              </HStack>
+
               <Textarea
                 h="4rem"
                 name="whyApply"
@@ -480,8 +485,22 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
               </Select>
             </FormControl>
 
+            <VStack fontWeight="700" alignItems="flex-start">
+              <Text display="inline" fontSize="13px" color="red">
+                FOR ALL PHOTO/VIDEO UPLOADS, THE FOLLOWING GUIDELINES APPLY:
+              </Text>
+              <Text display="inline" fontSize="13px" color="red">
+                File size limit: 100MB
+              </Text>
+              <Text display="inline" fontSize="13px" color="red">
+                Valid formats: .jpg, .jpeg, .png, .gif, .bmp, .webp, .mp4, .mov,
+                .avi, .wmv, .flv, .mkv, .webm,
+              </Text>
+            </VStack>
+
             <FormControl isRequired>
               <FormLabel>Upload a headshot photo of yourself</FormLabel>
+
               <HStack justifyContent="center">
                 <Input
                   type="file"
