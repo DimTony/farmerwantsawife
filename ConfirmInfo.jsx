@@ -17,8 +17,10 @@ const ConfirmInfo = ({ formData, setFormData }) => {
         <Text fontSize="2rem" fontWeight="700" color="#306ac0" mb={4}>
           Review and Submit
         </Text>
-        <Text mx="5rem">{generateUserSummary(formData)}</Text>
-        <HStack justifyContent="center">
+        <Text mx={{ xl: '5rem', base: '2rem' }}>
+          {generateUserSummary(formData)}
+        </Text>
+        <HStack justifyContent="center" mx={{ base: '2rem' }}>
           <FormControl>
             <Checkbox
               size="lg"
