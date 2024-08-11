@@ -198,7 +198,7 @@ const MakePayment = ({
             >
               <HStack fontSize="0.8rem" w="100%" justifyContent="space-between">
                 <Text>Transfer Amount</Text>
-                <Text>$500.00</Text>
+                <Text>$5000.00</Text>
               </HStack>
               <HStack
                 fontSize="0.8rem"
@@ -207,11 +207,11 @@ const MakePayment = ({
                 justifyContent="space-between"
               >
                 <Text>Outstanding Amount</Text>
-                <Text>-$500.00</Text>
+                <Text>-$5000.00</Text>
               </HStack>
               <HStack fontSize="0.8rem" w="100%" justifyContent="space-between">
                 <Text>Total Amount</Text>
-                <Text>$1000.00</Text>
+                <Text>$10000.00</Text>
               </HStack>
             </VStack>
           </Box>
