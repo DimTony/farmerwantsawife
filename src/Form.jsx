@@ -330,8 +330,8 @@ const MultiStepForm = () => {
               <Text as="span" fontWeight="bold" color="red.500">
                 24 hours
               </Text>{' '}
-              for a one-time fee of $1000.00 of which you are to pay half now
-              ($500.00) and the balance in person upon successful completion of
+              for a one-time fee of $10000.00 of which you are to pay half now
+              ($5000.00) and the balance in person upon successful completion of
               your interview at our studio. If you meet the eligibility criteria
               below, fill out the form below honestly. Be sure to save your
               registration information, as you can log back in and continue the
