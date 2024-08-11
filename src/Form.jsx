@@ -117,14 +117,17 @@ const MultiStepForm = () => {
         !formData.fullBodyPhoto ||
         !formData.headShotPhoto)
     ) {
+      console.log('formmm:', formData);
       toast({
         title: 'Please fill the required fields',
+
         status: 'error',
         duration: 3000,
         isClosable: true,
       });
       return;
     }
+    console.log('formmm:', formData);
 
     setCurrentStep(currentStep + 1);
   };
