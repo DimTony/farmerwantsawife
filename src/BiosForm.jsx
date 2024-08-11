@@ -728,7 +728,7 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
               </HStack>
               <Input
                 name="noOfChildren"
-                type="number"
+                type="text"
                 value={formData.noOfChildren}
                 onChange={handleChange}
                 outline="1px solid #306ac0"
