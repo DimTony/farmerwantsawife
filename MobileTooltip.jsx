@@ -43,7 +43,7 @@ const MobileQuestionTooltip = () => {
         <PopoverArrow />
         <PopoverCloseButton />
         <PopoverBody padding={4}>
-          <VStack align="start" spacing={2}>
+          <Box>
             <Text fontWeight="bold">
               Please transfer using PayPal's 'Friends and Family' option:
             </Text>
@@ -51,8 +51,12 @@ const MobileQuestionTooltip = () => {
             <Text>2. Select 'Send & Request.'</Text>
             <Text>3. Choose 'Send to a friend.'</Text>
             <Text>4. Enter the provided email and amount.</Text>
-            <Text>5. Complete the transfer.</Text>
-          </VStack>
+            <Text>5. Ensure that each transfer does not exceed $1,000.</Text>
+            <Text>
+              6. Complete the transfer. Repeat the process if the total amount
+              exceeds $1,000.
+            </Text>
+          </Box>
         </PopoverBody>
       </PopoverContent>
     </Popover>
