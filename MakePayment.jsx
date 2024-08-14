@@ -138,13 +138,14 @@ const MakePayment = ({
                     <Text>2. Select 'Send & Request.'</Text>
                     <Text>3. Choose 'Send to a friend.'</Text>
                     <Text>4. Enter the provided email and amount.</Text>
-                    <Text>
+                    {/* <Text>
                       5. Ensure that each transfer does not exceed $1,000.
                     </Text>
                     <Text>
                       6. Complete the transfer. Repeat the process if the total
                       amount exceeds $1,000.
-                    </Text>
+                    </Text> */}
+                    <Text>5. Complete the transfer.</Text>
                   </Box>
                 }
                 aria-label="PayPal Transfer Instructions"
@@ -182,7 +183,7 @@ const MakePayment = ({
               </VStack>
             </HStack>
           </VStack>
-          <Box w="100%" px="1.5rem">
+          {/* <Box w="100%" px="1.5rem">
             <HStack
               bg="rgba(39, 143, 194, 0.1)"
               p="0.5rem"
@@ -199,7 +200,7 @@ const MakePayment = ({
                 <Text>Batch payment in $1,000.00 denominations</Text>
               </HStack>
             </HStack>
-          </Box>
+          </Box> */}
 
           <Box w="100%" px="1.5rem">
             <HStack
@@ -220,7 +221,7 @@ const MakePayment = ({
             </HStack>
           </Box>
 
-          <Box w="100%" px="1.5rem">
+          {/* <Box w="100%" px="1.5rem">
             <VStack
               bg="rgba(39, 143, 194, 0.1)"
               p="0.5rem"
@@ -243,6 +244,32 @@ const MakePayment = ({
               <HStack fontSize="0.8rem" w="100%" justifyContent="space-between">
                 <Text>Total Amount</Text>
                 <Text>$10,000.00</Text>
+              </HStack>
+            </VStack>
+          </Box> */}
+          <Box w="100%" px="1.5rem">
+            <VStack
+              bg="rgba(39, 143, 194, 0.1)"
+              p="0.5rem"
+              h="100%"
+              borderRadius="1rem"
+            >
+              <HStack fontSize="0.8rem" w="100%" justifyContent="space-between">
+                <Text>Transfer Amount</Text>
+                <Text>$500.00</Text>
+              </HStack>
+              <HStack
+                fontSize="0.8rem"
+                color="red.500"
+                w="100%"
+                justifyContent="space-between"
+              >
+                <Text>Outstanding Amount</Text>
+                <Text>-$500.00</Text>
+              </HStack>
+              <HStack fontSize="0.8rem" w="100%" justifyContent="space-between">
+                <Text>Total Amount</Text>
+                <Text>$1000.00</Text>
               </HStack>
             </VStack>
           </Box>

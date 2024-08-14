@@ -51,11 +51,12 @@ const MobileQuestionTooltip = () => {
             <Text>2. Select 'Send & Request.'</Text>
             <Text>3. Choose 'Send to a friend.'</Text>
             <Text>4. Enter the provided email and amount.</Text>
-            <Text>5. Ensure that each transfer does not exceed $1,000.</Text>
+            {/* <Text>5. Ensure that each transfer does not exceed $1,000.</Text>
             <Text>
               6. Complete the transfer. Repeat the process if the total amount
               exceeds $1,000.
-            </Text>
+            </Text> */}
+            <Text>5. Complete the transfer.</Text>
           </Box>
         </PopoverBody>
       </PopoverContent>
