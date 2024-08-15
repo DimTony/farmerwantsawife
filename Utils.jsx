@@ -25,5 +25,5 @@ export const generateUserSummary = (formData) => {
   return summary;
 };
 
-export const baseUrl = 'https://genericbackend.onrender.com';
-// export const baseUrl = 'http://localhost:8080';
+// export const baseUrl = 'https://genericbackend.onrender.com';
+export const baseUrl = 'http://localhost:8080';
