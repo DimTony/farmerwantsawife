@@ -13,9 +13,9 @@ import {
   Textarea,
   useToast,
   VStack,
-} from '@chakra-ui/react';
-import { australianStates, source } from './assets/JSONs';
-import { useRef, useState } from 'react';
+} from "@chakra-ui/react";
+import { australianStates, source } from "./assets/JSONs";
+import { useRef, useState } from "react";
 
 const BiosForm = ({ formData, setFormData, handleChange }) => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -35,11 +35,11 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
     }
 
     // Check if the file is a video
-    if (!file.type.startsWith('video/')) {
+    if (!file.type.startsWith("video/")) {
       toast({
-        title: 'Invalid file type',
-        description: 'Please select a valid video file.',
-        status: 'error',
+        title: "Invalid file type",
+        description: "Please select a valid video file.",
+        status: "error",
         duration: 3000,
         isClosable: true,
       });
@@ -52,9 +52,9 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
     const maxSize = 2000 * 1024 * 1024; // 2GB in bytes
     if (file.size > maxSize) {
       toast({
-        title: 'File too large',
-        description: 'Please select a video file smaller than 100MB.',
-        status: 'error',
+        title: "File too large",
+        description: "Please select a video file smaller than 100MB.",
+        status: "error",
         duration: 3000,
         isClosable: true,
       });
@@ -68,9 +68,9 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
     setFormData((prevState) => ({ ...prevState, introVideo: file }));
 
     toast({
-      title: 'File selected',
+      title: "File selected",
       description: `${file.name} has been selected.`,
-      status: 'success',
+      status: "success",
       duration: 3000,
       isClosable: true,
     });
@@ -92,11 +92,11 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
     }
 
     // Check if the file is an image
-    if (!file.type.startsWith('image/')) {
+    if (!file.type.startsWith("image/")) {
       toast({
-        title: 'Invalid file type',
-        description: 'Please select a valid image file.',
-        status: 'error',
+        title: "Invalid file type",
+        description: "Please select a valid image file.",
+        status: "error",
         duration: 3000,
         isClosable: true,
       });
@@ -109,9 +109,9 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
     const maxSize = 2000 * 1024 * 1024; // 2GB in bytes
     if (file.size > maxSize) {
       toast({
-        title: 'File too large',
-        description: 'Please select an image file smaller than 5MB.',
-        status: 'error',
+        title: "File too large",
+        description: "Please select an image file smaller than 5MB.",
+        status: "error",
         duration: 3000,
         isClosable: true,
       });
@@ -125,9 +125,9 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
     setFormData((prevState) => ({ ...prevState, fullBodyPhoto: file }));
 
     toast({
-      title: 'File selected',
+      title: "File selected",
       description: `${file.name} has been selected.`,
-      status: 'success',
+      status: "success",
       duration: 3000,
       isClosable: true,
     });
@@ -145,11 +145,11 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
     }
 
     // Check if the file is an image
-    if (!file.type.startsWith('image/')) {
+    if (!file.type.startsWith("image/")) {
       toast({
-        title: 'Invalid file type',
-        description: 'Please select a valid image file.',
-        status: 'error',
+        title: "Invalid file type",
+        description: "Please select a valid image file.",
+        status: "error",
         duration: 3000,
         isClosable: true,
       });
@@ -162,9 +162,9 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
     const maxSize = 2000 * 1024 * 1024; // 2GB in bytes
     if (file.size > maxSize) {
       toast({
-        title: 'File too large',
-        description: 'Please select an image file smaller than 5MB.',
-        status: 'error',
+        title: "File too large",
+        description: "Please select an image file smaller than 5MB.",
+        status: "error",
         duration: 3000,
         isClosable: true,
       });
@@ -178,9 +178,9 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
     setFormData((prevState) => ({ ...prevState, headShotPhoto: file }));
 
     toast({
-      title: 'File selected',
+      title: "File selected",
       description: `${file.name} has been selected.`,
-      status: 'success',
+      status: "success",
       duration: 3000,
       isClosable: true,
     });
@@ -193,11 +193,11 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
   return (
     <>
       <Box
-        w={{ xl: '70vw', base: '90vw' }}
-        h={{ xl: '100%' }}
-        mb={{ xl: '2rem' }}
+        w={{ xl: "70vw", base: "90vw" }}
+        h={{ xl: "100%" }}
+        mb={{ xl: "2rem" }}
       >
-        <VStack mb="1rem" display={{ xl: 'none', base: 'flex' }} w="100%">
+        <VStack mb="1rem" display={{ xl: "none", base: "flex" }} w="100%">
           <HStack>
             <FormControl isRequired>
               <FormLabel>First Name</FormLabel>
@@ -348,7 +348,7 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
               placeholder="Select..."
               outline="1px solid #306ac0"
             >
-              {['Single', 'Married', 'Separated', 'Divorced'].map((state) => (
+              {["Single", "Married", "Separated", "Divorced"].map((state) => (
                 <option key={state} value={state}>
                   {state}
                 </option>
@@ -365,7 +365,7 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
             </HStack>
             <Input
               name="noOfChildren"
-              type="number"
+              type="text"
               value={formData.noOfChildren}
               onChange={handleChange}
               outline="1px solid #306ac0"
@@ -401,7 +401,7 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
               placeholder="Select..."
               outline="1px solid #306ac0"
             >
-              {['City Girl', 'Country Girl'].map((state) => (
+              {["City Girl", "Country Girl"].map((state) => (
                 <option key={state} value={state}>
                   {state}
                 </option>
@@ -436,7 +436,7 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
               placeholder="Select..."
               outline="1px solid #306ac0"
             >
-              {['Yes', 'No'].map((state) => (
+              {["Yes", "No"].map((state) => (
                 <option key={state} value={state}>
                   {state}
                 </option>
@@ -504,7 +504,7 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
                     Selected file: {selectedFullBodyPhotoFile.name} (
                     {(selectedFullBodyPhotoFile.size / (1024 * 1024)).toFixed(
                       2
-                    )}{' '}
+                    )}{" "}
                     MB)
                   </Text>
                 ) : (
@@ -546,7 +546,7 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
         </VStack>
 
         <HStack
-          display={{ xl: 'flex', base: 'none' }}
+          display={{ xl: "flex", base: "none" }}
           justifyContent="space-between"
           h="100%"
           alignItems="flex-start"
@@ -709,7 +709,7 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
                 placeholder="Select..."
                 outline="1px solid #306ac0"
               >
-                {['Single', 'Married', 'Separated', 'Divorced'].map((state) => (
+                {["Single", "Married", "Separated", "Divorced"].map((state) => (
                   <option key={state} value={state}>
                     {state}
                   </option>
@@ -766,7 +766,7 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
                 placeholder="Select..."
                 outline="1px solid #306ac0"
               >
-                {['City Girl', 'Country Girl'].map((state) => (
+                {["City Girl", "Country Girl"].map((state) => (
                   <option key={state} value={state}>
                     {state}
                   </option>
@@ -803,7 +803,7 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
                 placeholder="Select..."
                 outline="1px solid #306ac0"
               >
-                {['Yes', 'No'].map((state) => (
+                {["Yes", "No"].map((state) => (
                   <option key={state} value={state}>
                     {state}
                   </option>
@@ -845,7 +845,7 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
                   {selectedHeadShotFile ? (
                     <Text>
                       Selected file: {selectedHeadShotFile.name} (
-                      {(selectedHeadShotFile.size / (1024 * 1024)).toFixed(2)}{' '}
+                      {(selectedHeadShotFile.size / (1024 * 1024)).toFixed(2)}{" "}
                       MB)
                     </Text>
                   ) : (
@@ -874,7 +874,7 @@ const BiosForm = ({ formData, setFormData, handleChange }) => {
                       Selected file: {selectedFullBodyPhotoFile.name} (
                       {(selectedFullBodyPhotoFile.size / (1024 * 1024)).toFixed(
                         2
-                      )}{' '}
+                      )}{" "}
                       MB)
                     </Text>
                   ) : (
