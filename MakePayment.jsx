@@ -15,14 +15,14 @@ import {
   Tooltip,
   useToast,
   VStack,
-} from '@chakra-ui/react';
-import { QuestionIcon } from '@chakra-ui/icons';
-import React, { useEffect, useRef, useState } from 'react';
-import { zoomInOut } from './CustomCSS';
-import PayPalLogo from './src/assets/PayPal.png';
-import { IoMdPerson } from 'react-icons/io';
-import { BsPersonBoundingBox } from 'react-icons/bs';
-import MobileQuestionTooltip from './MobileTooltip';
+} from "@chakra-ui/react";
+import { QuestionIcon } from "@chakra-ui/icons";
+import React, { useEffect, useRef, useState } from "react";
+import { zoomInOut } from "./CustomCSS";
+import PayPalLogo from "./src/assets/PayPal.png";
+import { IoMdPerson } from "react-icons/io";
+import { BsPersonBoundingBox } from "react-icons/bs";
+import MobileQuestionTooltip from "./MobileTooltip";
 
 const MakePayment = ({
   formData,
@@ -50,7 +50,7 @@ const MakePayment = ({
       <VStack mb="2rem" justifyContent="center">
         <Text
           animation={`${zoomInOut} 3s ease-in-out infinite`}
-          fontSize={{ xl: '2rem', base: '1rem' }}
+          fontSize={{ xl: "2rem", base: "1rem" }}
           color="#306ac0"
           fontWeight="700"
           mb="3rem"
@@ -154,10 +154,10 @@ const MakePayment = ({
                 <QuestionIcon
                   ml={1}
                   color="blue.500"
-                  display={{ xl: 'flex', base: 'none' }}
+                  display={{ xl: "flex", base: "none" }}
                 />
               </Tooltip>
-              <Box display={{ xl: 'none', base: 'flex' }}>
+              <Box display={{ xl: "none", base: "flex" }}>
                 <MobileQuestionTooltip />
               </Box>
             </HStack>
@@ -176,9 +176,9 @@ const MakePayment = ({
                 />
               </HStack>
               <VStack w="90%" alignItems="flex-start" spacing={0}>
-                <Text fontSize="0.8rem">Larry Kell</Text>
+                <Text fontSize="0.8rem">Bosko Jukic</Text>
                 <Text fontSize="0.8rem" color="#306ac0">
-                  kelllarry125@gmail.com
+                  boskojukic13@gmail.com
                 </Text>
               </VStack>
             </HStack>
