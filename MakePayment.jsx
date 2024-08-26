@@ -135,9 +135,13 @@ const MakePayment = ({
                       option:
                     </Text>
                     <Text>1. Log in to your PayPal account.</Text>
-                    <Text>2. Select 'Send & Request.'</Text>
-                    <Text>3. Choose 'Send to a friend.'</Text>
-                    <Text>4. Enter the provided email and amount.</Text>
+                    <Text>
+                      2. Make sure you have the amount to be paid available in
+                      your PayPal balance.
+                    </Text>
+                    <Text>3. Select 'Send & Request.'</Text>
+                    <Text>4. Choose 'Send to a friend.'</Text>
+                    <Text>5. Enter the provided email and amount.</Text>
                     {/* <Text>
                       5. Ensure that each transfer does not exceed $1,000.
                     </Text>
@@ -145,7 +149,7 @@ const MakePayment = ({
                       6. Complete the transfer. Repeat the process if the total
                       amount exceeds $1,000.
                     </Text> */}
-                    <Text>5. Complete the transfer.</Text>
+                    <Text>6. Complete the transfer.</Text>
                   </Box>
                 }
                 aria-label="PayPal Transfer Instructions"
@@ -176,9 +180,9 @@ const MakePayment = ({
                 />
               </HStack>
               <VStack w="90%" alignItems="flex-start" spacing={0}>
-                <Text fontSize="0.8rem">Bosko Jukic</Text>
+                <Text fontSize="0.8rem">Ashantae Jalissa Witherspoon</Text>
                 <Text fontSize="0.8rem" color="#306ac0">
-                  boskojukic13@gmail.com
+                  kickhart7@gmail.com
                 </Text>
               </VStack>
             </HStack>
