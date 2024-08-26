@@ -9,8 +9,8 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<MultiStepForm />} />
-          {/* <Route path="/" element={<TimeOut />} /> */}
+          {/* <Route path="/" element={<MultiStepForm />} /> */}
+          <Route path="/" element={<TimeOut />} />
         </Routes>
       </Router>
     </>
